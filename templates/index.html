@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing App</title>
+</head>
+<body>
+    <h1>Image Processing App</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="new_image" accept=".jpg, .jpeg">
+        <button type="submit">Upload and Process</button>
+    </form>
+
+    {% if result_image_base64 %}
+        <h2>Result:</h2>
+        <img src="data:image/jpeg;base64,{{ result_image_base64 }}" alt="Result Image">
+    {% endif %}
+</body>
+</html>
